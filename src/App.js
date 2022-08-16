@@ -1,14 +1,15 @@
 import './App.css';
-import React,{useEffect} from 'react';
+import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi'; 
 import { TooltipComponent} from '@syncfusion/ej2-react-popups'
 
-import {Navbar, Footer, ThemeSettigns, Sidebar} from './components'
+import {Navbar, ThemeSettigns, Sidebar} from './components'
 import {useStateContext} from './context/contextProvider';
 import {Orders,ECommerce, Calendar,Employees, Stacked,Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor} from './pages';
 function App() {
-  const {activeMenu,setActiveMenu, themeSettings, setThemeSettings,currentColor,currentMode } = useStateContext();
+  const {activeMenu, themeSettings, setThemeSettings,currentColor,currentMode } = useStateContext();
+  
   return (
    <div className={currentMode === 'Dark' ? 'dark':''}>
      <BrowserRouter>

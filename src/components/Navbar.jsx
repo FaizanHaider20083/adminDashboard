@@ -6,7 +6,7 @@ import {RiNotification3Line } from 'react-icons/ri';
 import {MdKeyboardArrowDown } from 'react-icons/md';
 import {TooltipComponent} from '@syncfusion/ej2-react-popups';
 import avatar from '../data/avatar.jpg'
-import {Cart,Chat,Notification,userProfile } from '.'
+import {Cart,Chat } from '.'
 import {useStateContext } from '../context/contextProvider';
 import UserProfile from './UserProfile';
 import Notifications from './Notifications';
@@ -19,7 +19,7 @@ const NavButton = ({title,customFunc, icon,color,dotColor}) =>
 </TooltipComponent>)
 
 function Navbar(){
-    const {activeMenu, setActiveMenu, isClicked, setIsClicked,handleClick, screenSize, setScreenSize, currentColor } = useStateContext();
+    const { setActiveMenu, isClicked,handleClick, screenSize, setScreenSize, currentColor } = useStateContext();
     
     useEffect(() => {
         const handleResize = () => {setScreenSize(window.innerWidth)};
@@ -52,7 +52,7 @@ function Navbar(){
                     color={currentColor} icon={<RiNotification3Line/>}/>
             <TooltipComponent content="Profile" position="BottomCenter">
                 <div className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg" onClick={() =>handleClick('userProfile')}>
-                 <img src={avatar} className="rounded-full w-8 h-8"></img>
+                 <img src={avatar} alt="avatar" className="rounded-full w-8 h-8"></img>
                  <p>
                      <span className="text-gray-400 text-14">Hi,</span>
                      <span className="text-14 text-gray-400 font-bold ml-1">Michael</span>
